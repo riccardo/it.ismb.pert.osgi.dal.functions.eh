@@ -4,6 +4,7 @@ Bundle-Name: Dal_functions_eh
 Bundle-SymbolicName: it.ismb.pert.osgi.dal.functions.eh
 Bundle-Version: 1.0.0.qualifier
 Export-Package: org.energy_home.dal.functions,
- org.energy_home.dal.functions.data
+ org.energy_home.dal.functions.data,
+ org.energy_home.dal.functions.type
 Import-Package: org.osgi.service.dal,
  org.osgi.service.dal.functions.data

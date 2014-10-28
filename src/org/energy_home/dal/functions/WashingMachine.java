@@ -6,16 +6,24 @@ import org.osgi.service.dal.Function;
 import org.osgi.service.dal.functions.data.LevelData;
 
 public interface WashingMachine extends Function {
+
+	public static String PROPERTY_TEMPERATURE="temperature";
+	public static String PROPERTY_CYCLE="cycle";
+	public static String PROPERTY_SPIN="spin";
+	
+	public static String PROPERTY_STARTTIME="StartTime";
+	public static String PROPERTY_REMAININGTIME="RemainingTime";
+	public static String PROPERTY_FINISHTIME="FinishTime";
 	
 	//read-write properties
 	public LevelData getCycle() throws DeviceException;
-	public void setCycle(LevelData cycle) throws DeviceException;
+	public void setCycle(Short cycle) throws DeviceException;
 	
 	public LevelData getTemperature() throws DeviceException;
-	public void setTemperature(LevelData temperature) throws DeviceException;
+	public void setTemperature(Integer temperature) throws DeviceException;
 	
 	public LevelData getSpin() throws DeviceException;
-	public void setSpin(LevelData spin) throws DeviceException;
+	public void setSpin(Short spin) throws DeviceException;
 	
 	public TimeData getStartTime() throws DeviceException;
 	public void setStartTime(TimeData data) throws DeviceException;
