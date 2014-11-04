@@ -19,9 +19,9 @@ public class TimeData extends FunctionData{
 		this.timeAttribute=value;
 	}
 
-	public TimeData(long timestamp, Map metadata, int result) {
-		super(timestamp,metadata);
-		//TODO parse result to fill timeAttribute 
+	public TimeAttribute getTimeAttribute()
+	{
+		return timeAttribute;
 	}
 
 	@Override
