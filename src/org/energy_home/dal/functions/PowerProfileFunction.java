@@ -1,0 +1,59 @@
+package org.energy_home.dal.functions;
+
+import org.osgi.service.dal.DeviceException;
+import org.osgi.service.dal.Function;
+
+
+public interface PowerProfileFunction extends Function{
+	
+	final static Short MODE_DISABLED=0;
+	final static Short MODE_ECNONOMIC=1;
+	final static Short MODE_ECOLOGIC=2;
+
+	/**
+	 * Gets the total number of profiles supported by the device.
+	 * @return total number of profiles supported by the device
+	 * @throws DeviceException
+	 */
+	public Short getTotalProfileNum() throws DeviceException;
+
+	/**
+	 * Returns true if the server side of the Power Profile cluster supports the scheduling of 
+	 * multiple Energy Phases or it does support the scheduling of a single energy phase of the 
+	 * Power Profile at a time. Returns false otherwise
+	 * @return
+	 * @throws DeviceException
+	 */
+	public Boolean getMultipleScheduling() throws DeviceException;
+
+	//???
+	public Boolean getEnergyRemote() throws DeviceException;
+
+	//0=disabled 1=economic 2=ecologic
+	public Short getScheduleMode() throws DeviceException;
+
+	//IL remote control non si disabilita! 0 non è possibile
+	public void setScheduleMode(Short ScheduleMode) throws DeviceException;
+	
+/*
+GUARDARE PAGINA 229 ZigBee HA
+devo fare da 10285, prendendo prima i constraint e il powerprofile attivo
+
+		
+		public void execEnergyPhasesScheduleNotification(Short PowerProfileID, ScheduledPhase[] ScheduledPhases) throws DeviceException;
+		
+		//pag 214! 
+		public PowerProfileResponse execPowerProfileRequest(Short PowerProfileID)throws DeviceException;
+		
+		
+	
+
+	public PowerProfileStateResponse execPowerProfileStateRequest() throws DeviceException;
+
+
+
+	public PowerProfileScheduleConstraintsResponse execPowerProfileScheduleConstraintsRequest(Short PowerProfileID) throws DeviceException;
+
+	public EnergyPhasesScheduleStateResponse execEnergyPhasesScheduleStateRequest(Short PowerProfileID) throws DeviceException;
+	*/
+}
