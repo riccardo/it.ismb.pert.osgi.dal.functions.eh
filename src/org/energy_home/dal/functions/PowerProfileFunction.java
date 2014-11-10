@@ -10,6 +10,11 @@ public interface PowerProfileFunction extends Function{
 	final static Short MODE_ECNONOMIC=1;
 	final static Short MODE_ECOLOGIC=2;
 
+	final static String PROPERTY_TOTALPROFILENUM="TotalProfileNum";
+	final static String PROPERTY_ENERGYREMOTE="EnergyRemote";
+	final static String PROPERTY_MULTIPLESCHEDULING="MultipleScheduling";
+	final static String PROPERTY_SCHEDULEMODE="ScheduleMode";
+	
 	/**
 	 * Gets the total number of profiles supported by the device.
 	 * @return total number of profiles supported by the device
@@ -29,11 +34,12 @@ public interface PowerProfileFunction extends Function{
 	//???
 	public Boolean getEnergyRemote() throws DeviceException;
 
-	//0=disabled 1=economic 2=ecologic
+	//0=disabled 1=economic 2=ecologic Only Works when Apppliance can be controlled remotely
 	public Short getScheduleMode() throws DeviceException;
-
 	//IL remote control non si disabilita! 0 non è possibile
 	public void setScheduleMode(Short ScheduleMode) throws DeviceException;
+	
+	public void getConstraints();
 	
 /*
 GUARDARE PAGINA 229 ZigBee HA
