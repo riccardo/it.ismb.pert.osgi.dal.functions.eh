@@ -7,6 +7,8 @@ public interface ColorControl extends Function{
 	
 	public static final String OPERATION_SETCOLOR="setColor";
 
-	public void setColor(Short red, Short green,Short blue) throws DeviceException;
+	///public void setColor(Short red, Short green,Short blue) throws DeviceException;
+	public void setHS(Short hue, Short saturation) throws DeviceException;
+	public Short[] getHS() throws DeviceException;
 
 }

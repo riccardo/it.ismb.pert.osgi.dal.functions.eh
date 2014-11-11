@@ -1,5 +1,9 @@
 package org.energy_home.dal.functions;
 
+import org.energy_home.dal.functions.data.PowerProfileConstraintsData;
+import org.energy_home.dal.functions.data.PowerProfileData;
+import org.energy_home.dal.functions.data.PowerProfilePhasesData;
+import org.energy_home.dal.functions.type.ScheduledPhaseAttribute;
 import org.osgi.service.dal.DeviceException;
 import org.osgi.service.dal.Function;
 
@@ -14,6 +18,12 @@ public interface PowerProfileFunction extends Function{
 	final static String PROPERTY_ENERGYREMOTE="EnergyRemote";
 	final static String PROPERTY_MULTIPLESCHEDULING="MultipleScheduling";
 	final static String PROPERTY_SCHEDULEMODE="ScheduleMode";
+	static final String PROPERTY_CONSTRAINTS = "Constraints";
+	static final String PROPERTY_STATE = "PowerProfileState";
+	static final String PROPERTY_POWEPROFILEPHASES = "PowerProfilePhases";
+	
+	static final String OPERATION_SCHEDULEENRGYPHASES="scheduleEnergyPhases";
+	
 	
 	/**
 	 * Gets the total number of profiles supported by the device.
@@ -39,7 +49,12 @@ public interface PowerProfileFunction extends Function{
 	//IL remote control non si disabilita! 0 non è possibile
 	public void setScheduleMode(Short ScheduleMode) throws DeviceException;
 	
-	public void getConstraints();
+	public PowerProfileConstraintsData getConstraints(Short profileId)  throws DeviceException ;
+	public PowerProfileData getPowerProfileState() throws DeviceException;
+	
+	public PowerProfilePhasesData getPowerProfilePhases(Short PowerProfileID) throws DeviceException;
+	
+	public void scheduleEnergyPhases(Short PowerProfileID,ScheduledPhaseAttribute[] phases) throws DeviceException;
 	
 /*
 GUARDARE PAGINA 229 ZigBee HA
