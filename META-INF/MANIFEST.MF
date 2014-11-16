@@ -8,3 +8,4 @@ Export-Package: org.energy_home.dal.functions,
  org.energy_home.dal.functions.type
 Import-Package: org.osgi.service.dal,
  org.osgi.service.dal.functions.data
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

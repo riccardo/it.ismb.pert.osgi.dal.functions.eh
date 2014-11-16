@@ -9,7 +9,6 @@ public interface Oven extends Function {
 
 	public static String PROPERTY_TEMPERATURE="temperature";
 	public static String PROPERTY_CYCLE="cycle";
-	public static String PROPERTY_SPIN="spin";
 	
 	public static String PROPERTY_STARTTIME="StartTime";
 	public static String PROPERTY_REMAININGTIME="RemainingTime";
