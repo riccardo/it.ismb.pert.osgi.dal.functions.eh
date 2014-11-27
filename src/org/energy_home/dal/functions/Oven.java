@@ -3,6 +3,7 @@ package org.energy_home.dal.functions;
 import org.energy_home.dal.functions.data.TimeData;
 import org.osgi.service.dal.DeviceException;
 import org.osgi.service.dal.Function;
+import org.osgi.service.dal.functions.data.BooleanData;
 import org.osgi.service.dal.functions.data.LevelData;
 
 public interface Oven extends Function {
@@ -10,9 +11,12 @@ public interface Oven extends Function {
 	public static String PROPERTY_TEMPERATURE="temperature";
 	public static String PROPERTY_CYCLE="cycle";
 	
+	
 	public static String PROPERTY_STARTTIME="StartTime";
 	public static String PROPERTY_REMAININGTIME="RemainingTime";
 	public static String PROPERTY_FINISHTIME="FinishTime";
+	
+	public static String PROPERTY_REMOTECONTROL="RemoteControl";
 	
 	//read-write properties
 	public LevelData getCycle() throws DeviceException;
@@ -27,6 +31,7 @@ public interface Oven extends Function {
 	//read-only properties
 	public TimeData getFinishTime() throws DeviceException;
 	public TimeData getRemainingTime() throws DeviceException;
+	public BooleanData getRemoteControl() throws DeviceException;
 	
 	//Operations
 	public void execStartCycle() throws DeviceException;
