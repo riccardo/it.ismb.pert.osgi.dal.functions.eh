@@ -24,7 +24,6 @@ public class TimeData extends FunctionData{
 		return timeAttribute;
 	}
 
-	@Override
 	public int compareTo(Object o) {
 
 		return 0;

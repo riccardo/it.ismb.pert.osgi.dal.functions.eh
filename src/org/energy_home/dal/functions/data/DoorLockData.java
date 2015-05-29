@@ -26,7 +26,6 @@ public class DoorLockData extends FunctionData {
 		return this.status;
 	}
 
-	@Override
 	public int compareTo(Object o) {
 		return 0;
 	}
